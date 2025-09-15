@@ -11,17 +11,10 @@ jobs:
       TZ: Asia/Shanghai
     steps:
     - uses: actions/checkout@v4
-    - name: Remove Useless folder
-      run: |
-        rm -rf ./.git
-        rm -rf ./.github
-        rm ./README.md
-
-    - name: Pack Minecraft-Bedrock-Edition-ms_CN.zip
-      run: zip -r Minecraft-Bedrock-Edition-ms_CN.zip ./
-
-    - name: Rename Minecraft-Bedrock-Edition-ms_CN.mcpack
-      run: mv Minecraft-Bedrock-Edition-ms_CN.zip Minecraft-Bedrock-Edition-ms_CN.mcpack
+    - name: Create .mcpack file
+      uses: mzyxsl/minecraft-pack-action@v1
+      with:
+        output-filename: 'Minecraft-Bedrock-Edition-ms_CN'
       
     - name: Upload mcpack
       uses: actions/upload-artifact@v4
