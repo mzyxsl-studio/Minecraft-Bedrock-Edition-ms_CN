@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Create .mcpack file
-      uses: mzyxsl/minecraft-pack-action@v1
+      uses: mzyxsl/minecraft-pack-action@v1.0.0
       with:
         output-filename: 'Minecraft-Bedrock-Edition-ms_CN'
       
